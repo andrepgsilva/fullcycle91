@@ -1,0 +1,7 @@
+FROM golang:1.18
+
+RUN apt update
+RUN apt install sqlite3
+
+RUN go mod download github.com/gorilla/mux@v1.8.0
+RUN go mod download github.com/mattn/go-sqlite3@latest

@@ -1,0 +1,14 @@
+version: "3.9"  # optional since v1.27.0
+
+services:
+  web:
+    container_name: web_container
+    build:
+      context: .
+      dockerfile: dockerfile
+    volumes:
+      - .:/app
+    working_dir: /app
+    ports:
+      - "8000:8000"
+    command: bash -c "rm database/data.db && touch database/data.db && sqlite3 database/data.db < database/setup.sql && go run main.go"

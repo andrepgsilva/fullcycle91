@@ -1,0 +1,1 @@
+create table IF NOT EXISTS bank_accounts(id INTEGER PRIMARY KEY AUTOINCREMENT, account_number varchar(255), balance REAL);
